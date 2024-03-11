@@ -67,16 +67,12 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <systemProperties>
-                        <property>
+                    <systemPropertiesVareables>
                             <name>junit.jupiter.extensions.autodetection.enabled</name>
                             <value>true</value>
-                        </property>
-                        <property>
                             <name>allure.results.directory</name>
                             <value>${project.build.directory}/allure-results</value>
-                        </property>
-                    </systemProperties>
+                    </systemPropertiesVareables>
                 </configuration>
                 <dependencies>
                     <dependency>
