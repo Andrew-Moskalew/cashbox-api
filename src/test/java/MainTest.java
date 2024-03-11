@@ -24,7 +24,7 @@ public class MainTest {
                 .header("sessionid", sessionid)
                 .when().post(MainPage.getUrlOpenShift())
                 .then().statusCode(200).log().all()
-                .body("shift.params.cashier.id", equalTo("1"))
+                .body("shift.params.cashier.id", equalTo("2"))
                 .body("shift.params.cashier.name", equalTo("Иванов И.И."));
     }
 
