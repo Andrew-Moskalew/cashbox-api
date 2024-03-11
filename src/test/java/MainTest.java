@@ -93,6 +93,13 @@ public class MainTest {
                 .header("Content-Type", "application/json")
                 .header("sessionid", sessionid)
                 .when().post(MainPage.getUrlCloseShift())
+                .then();
+
+        given().body(MainPage.getCloseShiftBody())
+                .header("accept", "application/json")
+                .header("Content-Type", "application/json")
+                .header("sessionid", sessionid)
+                .when().post(MainPage.getUrlCloseShift())
                 .then().statusCode(400).log().all()
                 .body("error.message", equalTo("Смена закрыта (команда возможна только при открытой смене)"));
     }
